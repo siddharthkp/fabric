@@ -64,13 +64,11 @@ const Button = styled.button`
 const propList = [
   {
     name: 'Type',
-    type: 'enum',
-    options: [{ name: 'default' }, { name: 'primary' }, { name: 'transparent' }]
+    options: ['default', 'primary', 'transparent']
   },
   {
     name: 'Size',
-    type: 'enum',
-    options: [{ name: 'default', value: 'default' }, { name: 'small' }, { name: 'large' }]
+    options: ['default', 'small', 'large']
   }
 ]
 
