@@ -34,6 +34,7 @@ const Container = styled.div`
   margin: 50px auto;
   & .prism-code {
     background: #1b1c23;
+    overflow-x: auto;
   }
   & .token.comment {
     color: #4e6075;
