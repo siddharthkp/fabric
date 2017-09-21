@@ -34,6 +34,7 @@ const Container = styled.div`
   margin: 50px auto;
   & .prism-code {
     background: #1b1c23;
+    overflow-x: auto;
   }
   & .token.comment {
     color: #4e6075;
@@ -42,7 +43,7 @@ const Container = styled.div`
 
 const Playground = props =>
   <Container>
-    <LiveProvider code={props.code} scope={props.scope}>
+    <LiveProvider code={props.code} scope={props.components}>
       <Left>
         <LiveEditor style={{ minHeight: '100px' }} />
       </Left>

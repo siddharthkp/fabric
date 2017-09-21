@@ -61,23 +61,4 @@ const Button = styled.button`
   }
 `
 
-const propList = [
-  {
-    name: 'type',
-    options: ['default', 'primary', 'transparent']
-  },
-  {
-    name: 'size',
-    options: ['default', 'small', 'large']
-  },
-  {
-    name: 'onClick',
-    options: [
-      'default',
-      { name: 'onClick', value: `onClick={() => alert('You clicked the button!')}` }
-    ]
-  }
-]
-
 export default Button
-export { propList }
