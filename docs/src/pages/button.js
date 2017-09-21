@@ -7,31 +7,33 @@ import PropTable from '../common/prop-table'
 import Button, { propList } from '../components/button'
 const scope = { Button }
 
+const format = code => window.prettyFormat(code, { printWidth: 50 })
+
 class ButtonDocs extends React.Component {
   constructor() {
     super()
     this.state = {
-      example: `
+      example: format(`
 // import Button from 'fabric/button'
 
 <Button>Button</Button>
 
-`
+`)
     }
   }
 
   onPropsChanged(properties) {
-    const props = Object.values(properties)
-      .map(prop => (prop !== 'default' ? prop : null))
-      .join(' ')
-      .trim()
+    let props = Object.values(properties)
+    props = props.filter(prop => prop !== 'default').join(' ').trim()
 
-    let example = `
+    let example = format(
+      `
 // import Button from 'fabric/button'
 
 <Button ${props}>Button</Button>
 
 `
+    )
 
     this.setState({ example })
   }

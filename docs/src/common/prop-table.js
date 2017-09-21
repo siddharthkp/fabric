@@ -25,8 +25,9 @@ const Option = styled.div`
 class PropTable extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
-    props.list.map(prop => (this.state[prop.name] = 'default'))
+    const state = {}
+    props.list.map(prop => (state[prop.name] = 'default'))
+    this.state = state
   }
   onSelect(event) {
     const key = event.target.getAttribute('data-key')
