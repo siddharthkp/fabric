@@ -72,7 +72,10 @@ const propList = [
   },
   {
     name: 'onClick',
-    options: ['default', { name: 'function', value: `\nonClick={onClick}` }]
+    options: [
+      'default',
+      { name: 'onClick', value: `onClick={() => alert('You clicked the button!')}` }
+    ]
   }
 ]
 
