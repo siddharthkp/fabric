@@ -5,7 +5,7 @@ import Description from '../common/description'
 import PropTable from '../common/prop-table'
 
 import Button, { propList } from '../components/button'
-const scope = { Button, onClick: () => alert('You clicked the button!') }
+const scope = { Button }
 
 class ButtonDocs extends React.Component {
   constructor() {
@@ -15,6 +15,7 @@ class ButtonDocs extends React.Component {
 // import Button from 'fabric/button'
 
 <Button>Button</Button>
+
 `
     }
   }
@@ -29,6 +30,7 @@ class ButtonDocs extends React.Component {
 // import Button from 'fabric/button'
 
 <Button ${props}>Button</Button>
+
 `
 
     this.setState({ example })
