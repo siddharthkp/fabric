@@ -63,12 +63,16 @@ const Button = styled.button`
 
 const propList = [
   {
-    name: 'Type',
+    name: 'type',
     options: ['default', 'primary', 'transparent']
   },
   {
-    name: 'Size',
+    name: 'size',
     options: ['default', 'small', 'large']
+  },
+  {
+    name: 'onClick',
+    options: ['default', { name: 'function', value: `onClick={this.onClick}` }]
   }
 ]
 

@@ -20,7 +20,10 @@ class ButtonDocs extends React.Component {
   }
 
   onPropsChanged(properties) {
-    const props = Object.values(properties).join(' ')
+    const props = Object.values(properties)
+      .map(prop => (prop !== 'default' ? prop : null))
+      .join(' ')
+      .trim()
 
     this.setState({
       example: `
