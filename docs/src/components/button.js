@@ -72,7 +72,7 @@ const propList = [
   },
   {
     name: 'onClick',
-    options: ['default', { name: 'function', value: `onClick={this.onClick}` }]
+    options: ['default', { name: 'function', value: `\nonClick={onClick}` }]
   }
 ]
 
