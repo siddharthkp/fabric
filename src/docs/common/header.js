@@ -16,8 +16,10 @@ const Title = styled.div`
   color: #215c44;
 `
 
-export default () =>
+export default props =>
   <Header condensed>
     <img src="logo.png" alt="logo" />
-    <Title>Button</Title>
+    <Title>
+      {props.title}
+    </Title>
   </Header>

@@ -45,7 +45,7 @@ const Playground = props =>
   <Container>
     <LiveProvider code={props.code} scope={props.components}>
       <Left>
-        <LiveEditor style={{ minHeight: '100px' }} />
+        <LiveEditor id="editor" style={{ minHeight: '100px' }} />
       </Left>
       <Right>
         <Center style={{ minHeight: '100px' }}>

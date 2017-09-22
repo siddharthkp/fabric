@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import getDefaultProps from './default-props'
 
 const Table = styled.div`
   width: 80%;
@@ -11,7 +12,7 @@ const Row = styled.div`padding: 20px;`
 
 const Name = styled.div`
   display: inline-block;
-  width: 100px;
+  width: 150px;
 `
 
 const Option = styled.div`
@@ -26,7 +27,7 @@ class PropTable extends React.Component {
   constructor(props) {
     super(props)
     const state = {}
-    props.list.map(prop => (state[prop.name] = 'default'))
+    getDefaultProps(props.list).map(prop => (state[prop.name] = prop.value))
     this.state = state
   }
   onSelect(event) {
@@ -56,11 +57,11 @@ class PropTable extends React.Component {
                 <Option
                   key={index}
                   data-key={prop.name}
-                  data-value={option.value || option}
-                  selected={this.state[prop.name] === (option.value || option)}
+                  data-value={option.value}
+                  selected={this.state[prop.name] === option.value}
                   onClick={this.onSelect.bind(this)}
                 >
-                  {option.name || option}
+                  {option.name}
                 </Option>
               )}
           </Row>

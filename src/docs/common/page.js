@@ -3,28 +3,59 @@ import Playground from '../common/playground'
 import Header from '../common/header'
 import Description from '../common/description'
 import PropTable from '../common/prop-table'
+import getDefaultProps from '../common/default-props'
 
-const format = (code, props) => {
-  code = code.replace('{props}', props || '')
-  code = window.prettyFormat(code, { printWidth: 50 })
+/*
+  prettify that code!
+*/
+const format = (code, propList) => {
+  const propString = getPropString(propList)
+  code = code.replace('{props}', propString)
+
+  let printWidth = 50 // default
+  const editor = document.getElementById('editor')
+  if (editor) printWidth = editor.offsetWidth / 50
+
+  code = window.prettyFormat(code, { printWidth })
   code += '\n'
   return code
+}
+
+const getPropString = propList => {
+  return (
+    propList
+      // remove props with null values
+      .filter(prop => prop.value)
+      // get values
+      .map(prop => prop.value)
+      // make one string that can be passed to the component
+      .join(' ')
+  )
 }
 
 class Page extends React.Component {
   constructor(props) {
     super(props)
+
+    // clone the propList to a new variable
+    const propList = props.docs.propList.slice(0)
+
+    // get props with default:true
+    const defaultProps = getDefaultProps(propList)
+
     this.state = {
-      code: format(this.props.docs.example)
+      code: format(this.props.docs.example, defaultProps)
     }
   }
 
-  onPropsChanged(properties) {
-    properties = Object.values(properties)
-    properties = properties.filter(prop => prop !== 'default').join(' ').trim()
+  onPropsChanged(props) {
+    // convert object to array
+    const propList = Object.entries(props).map(([key, value]) => ({
+      name: key,
+      value
+    }))
 
-    let code = format(this.props.docs.example, properties)
-
+    let code = format(this.props.docs.example, propList)
     this.setState({ code })
   }
   render() {

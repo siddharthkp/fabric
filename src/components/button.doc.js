@@ -1,21 +1,32 @@
 export default {
-  title: 'Title',
+  title: 'Button',
   description:
     'Buttons make common actions immediately visible and easy to perform with one click or tap.',
   propList: [
     {
       name: 'type',
-      options: ['default', 'primary', 'transparent']
+      options: [
+        { name: 'default', value: '', default: true },
+        { name: 'primary', value: 'primary' },
+        { name: 'transparent', value: 'transparent' }
+      ]
     },
     {
       name: 'size',
-      options: ['default', 'slim', 'large']
+      options: [
+        { name: 'default', value: '', default: true },
+        { name: 'slim', value: 'slim' },
+        { name: 'large', value: 'large' }
+      ]
     },
     {
       name: 'onClick',
       options: [
-        'default',
-        { name: 'onClick', value: `onClick={() => alert('You clicked the button!')}` }
+        { name: 'default', value: '', default: true },
+        {
+          name: 'onClick',
+          value: `onClick={() => alert('You clicked the button!')}`
+        }
       ]
     }
   ],

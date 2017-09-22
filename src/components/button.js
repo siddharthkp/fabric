@@ -1,15 +1,16 @@
 import styled from 'styled-components'
+import theme from './theme'
 
 const colors = {
   basic: {
     background: '#f1f1f1',
-    font: '#333333',
+    font: theme.primary,
     border: '#eeeeee',
     hoverBackground: '#dbdada',
     focusBackground: '#d7d7d7'
   },
   primary: {
-    background: '#333333',
+    background: theme.primary,
     font: '#ffffff',
     border: '#eeeeee',
     hoverBackground: '#484848',
@@ -17,8 +18,8 @@ const colors = {
   },
   transparent: {
     background: 'transparent',
-    font: '#333333',
-    border: '#333333',
+    font: theme.primary,
+    border: theme.primary,
     hoverBackground: '#f1f1f1',
     focusBackground: '#f1f1f1'
   }
