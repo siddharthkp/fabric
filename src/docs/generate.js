@@ -9,7 +9,7 @@ const template = (name, file, doc) => `
 import React from 'react'
 import Page from '../common/page'
 
-import Button from '../../components/${file}'
+import ${name} from '../../components/${file}'
 import docs from '../../components/${doc}'
 const components = { ${name} }
 
