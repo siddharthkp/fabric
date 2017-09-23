@@ -1,0 +1,18 @@
+{
+  "backgrounds": {
+    "primary": "#333333",
+    "error": "#ff0000",
+    "white": "#ffffff",
+    "light": "#f1f1f1",
+    "disabled": "#d9d9d9"
+  },
+  "text": {
+    "dark": "#333",
+    "light": "#FFF"
+  },
+  "borders": {
+    "light": "#eeeeee",
+    "subtle": "#b7b7b7",
+    "highlight": "#14aaff"
+  }
+}
