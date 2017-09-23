@@ -6,18 +6,19 @@
     "primary": "#333333",
     "primaryHover": "#484848",
     "primaryFocus": "#313131",
-    "error": "#ff0000",
     "white": "#ffffff",
     "disabled": "#d9d9d9"
   },
   "text": {
     "dark": "#333",
-    "light": "#FFF"
+    "light": "#FFF",
+    "error": "#ff0000"
   },
   "border": {
     "light": "#eeeeee",
     "subtle": "#b7b7b7",
-    "highlight": "#14aaff"
+    "highlight": "#14aaff",
+    "error": "#ff0000"
   },
   "font": {
     "text": "'Nunito', sans-serif",
