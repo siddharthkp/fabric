@@ -1,5 +1,5 @@
 export default {
-  title: 'Button',
+  name: 'Button',
   description:
     'Buttons make common actions immediately visible and easy to perform with one click or tap.',
   propList: [

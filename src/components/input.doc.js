@@ -1,5 +1,5 @@
 export default {
-  title: 'Input',
+  name: 'Input',
   description:
     'An input field is typically used in forms. It has a range of options and supports several text formats including numbers.',
   propList: [

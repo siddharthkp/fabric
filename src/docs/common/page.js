@@ -61,7 +61,7 @@ class Page extends React.Component {
   render() {
     return (
       <div>
-        <Header condensed title={this.props.docs.title} />
+        <Header condensed title={this.props.docs.name} />
         <Description>
           {this.props.docs.description}
         </Description>
