@@ -1,5 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Button from './docs/pages/button'
+import Input from './docs/pages/input'
 
-ReactDOM.render(<Button />, document.getElementById('root'))
+ReactDOM.render(<Input />, document.getElementById('root'))
