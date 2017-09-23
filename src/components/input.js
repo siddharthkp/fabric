@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import theme, { background, border, font } from './theme.json'
+import { background, border, font } from './theme.json'
+import validate from './helpers/validate-props'
 
 const colors = {
   basic: {
@@ -29,6 +30,7 @@ const getColor = props => {
 }
 
 const Input = styled.input`
+  ${props => validate('input', props)};
   border: 1px solid;
   border-radius: 3px;
   padding: 8px 16px;

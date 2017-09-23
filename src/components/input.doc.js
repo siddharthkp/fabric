@@ -8,7 +8,8 @@ export default {
       options: [
         { name: 'text', value: `type="text"`, default: true },
         { name: 'password', value: `type="password"` }
-      ]
+      ],
+      required: true
     },
     {
       name: 'code',

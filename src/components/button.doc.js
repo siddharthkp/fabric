@@ -22,7 +22,7 @@ export default {
     {
       name: 'onClick',
       options: [
-        { name: 'default', value: '', default: true },
+        { name: 'none', value: '', default: true },
         {
           name: 'onClick',
           value: `onClick={() => alert('You clicked the button!')}`
