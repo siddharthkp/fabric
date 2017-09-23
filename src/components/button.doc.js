@@ -6,7 +6,7 @@ export default {
     {
       name: 'type',
       options: [
-        { name: 'default', value: '', default: true },
+        { name: 'basic', value: '', default: true },
         { name: 'primary', value: 'primary' },
         { name: 'transparent', value: 'transparent' }
       ]

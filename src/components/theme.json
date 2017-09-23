@@ -1,18 +1,26 @@
 {
-  "backgrounds": {
+  "background": {
+    "light": "#f1f1f1",
+    "lightHover": "#dbdada",
+    "lightFocus": "#d7d7d7",
     "primary": "#333333",
+    "primaryHover": "#484848",
+    "primaryFocus": "#313131",
     "error": "#ff0000",
     "white": "#ffffff",
-    "light": "#f1f1f1",
     "disabled": "#d9d9d9"
   },
   "text": {
     "dark": "#333",
     "light": "#FFF"
   },
-  "borders": {
+  "border": {
     "light": "#eeeeee",
     "subtle": "#b7b7b7",
     "highlight": "#14aaff"
+  },
+  "font": {
+    "text": "'Nunito', sans-serif",
+    "code": "'Droid Sans Mono', monospace"
   }
 }

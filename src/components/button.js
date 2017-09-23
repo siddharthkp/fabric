@@ -1,27 +1,28 @@
 import styled from 'styled-components'
-import theme from './theme'
+import { background, border, text, font } from './theme.json'
+import validate from './helpers/validate-props'
 
 const colors = {
   basic: {
-    background: '#f1f1f1',
-    font: theme.primary,
-    border: '#eeeeee',
-    hoverBackground: '#dbdada',
-    focusBackground: '#d7d7d7'
+    background: background.light,
+    hoverBackground: background.lightHover,
+    focusBackground: background.lightFocus,
+    font: text.dark,
+    border: border.light
   },
   primary: {
-    background: theme.primary,
-    font: '#ffffff',
-    border: '#eeeeee',
-    hoverBackground: '#484848',
-    focusBackground: '#313131'
+    background: background.primary,
+    font: text.light,
+    border: border.light,
+    hoverBackground: background.primaryHover,
+    focusBackground: background.primaryFocus
   },
   transparent: {
     background: 'transparent',
-    font: theme.primary,
-    border: theme.primary,
-    hoverBackground: '#f1f1f1',
-    focusBackground: '#f1f1f1'
+    font: text.dark,
+    border: border.primary,
+    hoverBackground: background.light,
+    focusBackground: background.light
   }
 }
 
@@ -38,6 +39,7 @@ const setSize = props => {
 }
 
 const Button = styled.button`
+  ${props => validate('button', props)};
   border-radius: 3px;
   border: 1px solid;
   text-align: center;
@@ -47,7 +49,7 @@ const Button = styled.button`
   line-height: 1;
   letter-spacing: 1px;
   cursor: pointer;
-  font-family: 'Nunito', sans-serif;
+  font-family: ${font.text};
   transition: background-color 0.5s, height 0.5s, padding 0.5s;
 
   color: ${props => getColor(props).font};
