@@ -48,7 +48,7 @@ const Option = styled.div`
 
 const Options = styled.div`
   & ${Option} {
-    border-right: 1px solid #b7b7b7;
+    border-right: 1px solid #d8d8d8;
   }
   & ${Option}:first-child {
     border-radius: 2px 0 0 2px;
