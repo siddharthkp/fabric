@@ -13,32 +13,18 @@ const Header = styled.div`
   padding: 0 18px;
 `
 
-const Row = styled.div`padding: 20px;`
-
-const Name = styled.div`
-  display: inline-block;
-  width: 150px;
-`
-
-const Option = styled.div`
-  display: inline-block;
-  min-width: 100px;
-  transition: color 0.5s;
-  cursor: pointer;
-  color: ${props => (props.selected ? '#C78A8B' : '#333')};
-`
+const Example = styled.div`padding: 0 20px;`
 
 const Examples = props =>
   <Table>
     <Header>Examples</Header>
     <br />
     {props.examples &&
-      props.examples.map(example =>
-        <Row>
+      props.examples.map((example, index) =>
+        <Example key={index}>
           <Playground code={example} components={props.components} />
-        </Row>
+        </Example>
       )}
-    )}
   </Table>
 
 export default Examples

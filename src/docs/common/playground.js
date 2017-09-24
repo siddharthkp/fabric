@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
-const Left = styled.div`
-  float: left;
+const Half = styled.div`
+  float: ${props => (props.left ? 'left' : 'right')};
   width: 50%;
   @media screen and (max-width: 699px) {
     & {
@@ -11,15 +11,7 @@ const Left = styled.div`
     }
   }
 `
-const Right = styled.div`
-  float: right;
-  width: 50%;
-  @media screen and (max-width: 699px) {
-    & {
-      width: 100%;
-    }
-  }
-`
+
 const Clear = styled.div`clear: both;`
 
 const Center = styled.div`
@@ -31,7 +23,7 @@ const Center = styled.div`
 const Container = styled.div`
   width: ${props => (props.main ? '80%' : '100%')};
   max-width: 800px;
-  margin: ${props => (props.main ? '50px' : 'auto')} auto;
+  margin: 50px auto;
   & .prism-code {
     background: #354355;
     overflow-x: auto;
@@ -51,14 +43,14 @@ const Container = styled.div`
 const Playground = props =>
   <Container main={props.main}>
     <LiveProvider code={props.code} scope={props.components}>
-      <Left>
+      <Half left main={props.main}>
         <Center main={props.main} style={{ minHeight: '50px' }}>
           <LivePreview />
         </Center>
-      </Left>
-      <Right>
+      </Half>
+      <Half right main={props.main}>
         <LiveEditor id="editor" style={{ minHeight: '50px' }} />
-      </Right>
+      </Half>
       <Clear />
       <LiveError />
     </LiveProvider>
