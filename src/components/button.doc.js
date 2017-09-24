@@ -5,6 +5,8 @@ export default {
   propList: [
     {
       name: 'type',
+      format: 'bool',
+      description: 'type of button',
       options: [
         { name: 'basic', value: '', default: true },
         { name: 'primary', value: 'primary' },
@@ -13,6 +15,8 @@ export default {
     },
     {
       name: 'size',
+      format: 'bool',
+      description: 'use large/small for changing emphasis',
       options: [
         { name: 'default', value: '', default: true },
         { name: 'slim', value: 'slim' },
@@ -21,6 +25,8 @@ export default {
     },
     {
       name: 'onClick',
+      format: 'function',
+      description: 'pass on your own click handler',
       options: [
         { name: 'none', value: '', default: true },
         {

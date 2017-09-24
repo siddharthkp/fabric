@@ -17,9 +17,22 @@ const Header = styled.div`
 
 const Row = styled.div`padding: 20px;`
 
-const Name = styled.div`
+const Cell = styled.div`
   display: inline-block;
-  width: 150px;
+  width: ${props => (props.width ? props.width : '25%')};
+  text-align: ${props => (props.right ? 'right' : 'left')};
+  vertical-align: top;
+`
+
+const Type = styled.span`
+  display: inline-block;
+  font-size: 12px;
+  font-family: 'Droid Sans Mono', sans-serif;
+  background: #deebff;
+  color: #0747a6;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-left: 5px;
 `
 
 const Option = styled.div`
@@ -27,7 +40,30 @@ const Option = styled.div`
   min-width: 100px;
   transition: color 0.5s;
   cursor: pointer;
-  color: ${props => (props.selected ? '#C78A8B' : '#333')};
+  padding: 3px;
+  text-align: center;
+  background: ${props => (props.selected ? '#333' : '#f1f1f1')};
+  color: ${props => (props.selected ? '#fff' : '#333')};
+`
+
+const Options = styled.div`
+  & ${Option} {
+    border-right: 1px solid #b7b7b7;
+  }
+  & ${Option}:first-child {
+    border-radius: 2px 0 0 2px;
+  }
+  & ${Option}:last-child {
+    border-right: none;
+    border-radius: 0 2px 2px 0;
+  }
+`
+
+const Required = styled.span`
+  color: #ff0000;
+  &::after {
+    content: '*';
+  }
 `
 
 class PropTable extends React.Component {
@@ -55,22 +91,33 @@ class PropTable extends React.Component {
         <br />
         {this.props.list.map((prop, index) =>
           <Row key={index}>
-            <Name>
-              {prop.name}:
-            </Name>
+            <Cell width="25%">
+              {prop.required ? <Required /> : null}
+              {prop.name}
+              <Type>
+                {prop.format}
+              </Type>
+            </Cell>
+            <Cell width="25%">
+              {prop.description}
+            </Cell>
 
-            {prop.options &&
-              prop.options.map((option, index) =>
-                <Option
-                  key={index}
-                  data-key={prop.name}
-                  data-value={option.value}
-                  selected={this.state[prop.name] === option.value}
-                  onClick={this.onSelect.bind(this)}
-                >
-                  {option.name}
-                </Option>
-              )}
+            <Cell width="45%" right>
+              <Options>
+                {prop.options &&
+                  prop.options.map((option, index) =>
+                    <Option
+                      key={index}
+                      data-key={prop.name}
+                      data-value={option.value}
+                      selected={this.state[prop.name] === option.value}
+                      onClick={this.onSelect.bind(this)}
+                    >
+                      {option.name}
+                    </Option>
+                  )}
+              </Options>
+            </Cell>
           </Row>
         )}
       </Table>

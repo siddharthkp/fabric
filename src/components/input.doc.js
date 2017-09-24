@@ -5,6 +5,8 @@ export default {
   propList: [
     {
       name: 'type',
+      format: 'string',
+      description: 'semantic HTML input type',
       options: [
         { name: 'text', value: `type="text"`, default: true },
         { name: 'password', value: `type="password"` }
@@ -13,6 +15,8 @@ export default {
     },
     {
       name: 'code',
+      format: 'bool',
+      description: 'code formatting for your input boxes',
       options: [
         { name: 'default', value: '', default: true },
         { name: 'code', value: 'code' }
@@ -20,6 +24,8 @@ export default {
     },
     {
       name: 'readOnly',
+      format: 'bool',
+      description: 'code formatting for your input boxes',
       options: [
         { name: 'editable', value: '', default: true },
         { name: 'readOnly', value: 'readOnly' }
@@ -27,6 +33,9 @@ export default {
     },
     {
       name: 'placeholder',
+      format: 'string',
+      description:
+        'this is what is visible to the users before they add any text',
       options: [
         { name: 'none', value: '' },
         {
@@ -38,6 +47,8 @@ export default {
     },
     {
       name: 'error',
+      format: 'string',
+      description: 'pass your error down as a string',
       options: [
         { name: 'none', value: '', default: true },
         {

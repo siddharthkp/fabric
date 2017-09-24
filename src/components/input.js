@@ -34,8 +34,8 @@ const Input = styled.input`
   border: 1px solid;
   border-radius: 3px;
   padding: 8px 16px;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: ${props => (props.code ? 13 : 14)}px;
+  line-height: ${props => (props.code ? 1.85 : 1.71)};
   border-color: ${props => getColor(props).border};
   background: ${props => getColor(props).background};
   font-family: ${props => (props.code ? font.code : font.text)};
