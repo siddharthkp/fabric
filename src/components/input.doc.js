@@ -47,7 +47,7 @@ export default {
       ]
     }
   ],
-  example: `
+  template: `
 // import Input from 'fabric/button'
 
 <Input {props} />

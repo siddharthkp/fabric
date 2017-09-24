@@ -3,6 +3,7 @@ import Playground from '../common/playground'
 import Header from '../common/header'
 import Description from '../common/description'
 import PropTable from '../common/prop-table'
+import Examples from '../common/examples'
 import getDefaultProps from '../common/default-props'
 
 /*
@@ -44,7 +45,7 @@ class Page extends React.Component {
     const defaultProps = getDefaultProps(propList)
 
     this.state = {
-      code: format(this.props.docs.example, defaultProps)
+      code: format(this.props.docs.template, defaultProps)
     }
   }
 
@@ -55,7 +56,7 @@ class Page extends React.Component {
       value
     }))
 
-    let code = format(this.props.docs.example, propList)
+    let code = format(this.props.docs.template, propList)
     this.setState({ code })
   }
   render() {
@@ -65,10 +66,18 @@ class Page extends React.Component {
         <Description>
           {this.props.docs.description}
         </Description>
-        <Playground code={this.state.code} components={this.props.components} />
+        <Playground
+          main
+          code={this.state.code}
+          components={this.props.components}
+        />
         <PropTable
           list={this.props.docs.propList}
           onPropsChanged={this.onPropsChanged.bind(this)}
+        />
+        <Examples
+          examples={this.props.docs.examples}
+          components={this.props.components}
         />
       </div>
     )

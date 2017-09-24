@@ -8,6 +8,11 @@ const Table = styled.div`
   margin: 50px auto;
 `
 
+const Header = styled.div`
+  font-size: 21px;
+  padding: 0 18px;
+`
+
 const Row = styled.div`padding: 20px;`
 
 const Name = styled.div`
@@ -44,7 +49,7 @@ class PropTable extends React.Component {
   render() {
     return (
       <Table>
-        <div>Customizations/Props:</div>
+        <Header>Props</Header>
         <br />
         {this.props.list.map((prop, index) =>
           <Row key={index}>

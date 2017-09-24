@@ -25,35 +25,42 @@ const Clear = styled.div`clear: both;`
 const Center = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: ${props => (props.main ? 'center' : 'auto')};
 `
 
 const Container = styled.div`
-  width: 80%;
+  width: ${props => (props.main ? '80%' : '100%')};
   max-width: 800px;
-  margin: 50px auto;
+  margin: ${props => (props.main ? '50px' : 'auto')} auto;
   & .prism-code {
-    background: #1b1c23;
+    background: #354355;
     overflow-x: auto;
+    border-radius: 4px;
   }
   & .token.comment {
-    color: #4e6075;
+    color: #889aaf;
+  }
+  & .react-live-error {
+    font-size: 13px;
+    background: #d9675d;
+    color: #fff;
+    padding: 5px;
   }
 `
 
 const Playground = props =>
-  <Container>
+  <Container main={props.main}>
     <LiveProvider code={props.code} scope={props.components}>
       <Left>
-        <LiveEditor id="editor" style={{ minHeight: '100px' }} />
-      </Left>
-      <Right>
-        <Center style={{ minHeight: '100px' }}>
-          <LiveError />
+        <Center main={props.main} style={{ minHeight: '50px' }}>
           <LivePreview />
         </Center>
+      </Left>
+      <Right>
+        <LiveEditor id="editor" style={{ minHeight: '50px' }} />
       </Right>
       <Clear />
+      <LiveError />
     </LiveProvider>
   </Container>
 
