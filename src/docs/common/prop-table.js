@@ -10,7 +10,9 @@ const Table = styled.div`
 
 const Header = styled.div`
   font-size: 21px;
-  padding: 0 18px;
+  margin: 0 18px;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
 `
 
 const Row = styled.div`padding: 20px;`

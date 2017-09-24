@@ -52,5 +52,11 @@ export default {
 
 <Input {props} />
 
-`
+`,
+  examples: [
+    `<Input type="password" defaultValue="password" />`,
+    `<Input type="text" code defaultValue="const age = 18"/>`,
+    `<Input type="text" readOnly defaultValue="can't touch this"/>`,
+    `<Input type="text" error="Email address is invalid" defaultValue="sid@auth0..com" />`
+  ]
 }
