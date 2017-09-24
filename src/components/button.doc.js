@@ -39,7 +39,7 @@ export default {
   examples: [
     `<Button primary>BUTTON</Button>`,
     `<Button transparent>TRANSPARENT</Button>`,
-    `<Button primary large>LARGE BUTTON</Button>`,
+    `<Button large primary>LARGE PRIMARY BUTTON</Button>`,
     `<Button onClick={() => alert('You clicked the button!')}>Click me!</Button>`
   ]
 }
