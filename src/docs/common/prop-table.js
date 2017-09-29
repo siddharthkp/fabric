@@ -10,17 +10,17 @@ const Table = styled.div`
 
 const Header = styled.div`
   font-size: 21px;
-  margin: 0 18px;
-  padding: 5px 0;
+  padding: 5px;
   border-bottom: 1px solid #eee;
 `
 
-const Row = styled.div`padding: 20px;`
+const Row = styled.div`padding: 20px 0 20px 20px;`
 
 const Cell = styled.div`
   display: inline-block;
   width: ${props => (props.width ? props.width : '25%')};
   text-align: ${props => (props.right ? 'right' : 'left')};
+  float: ${props => (props.right ? 'right' : 'none')};
   vertical-align: top;
 `
 
@@ -42,15 +42,17 @@ const Option = styled.div`
   cursor: pointer;
   padding: 3px;
   text-align: center;
-  background: ${props => (props.selected ? '#333' : '#f1f1f1')};
-  color: ${props => (props.selected ? '#fff' : '#333')};
+  background: ${props => (props.selected ? '#deebff' : '#f1f1f1')};
+  color: ${props => (props.selected ? '#0747a6' : '#333')};
+  font-weight: ${props => (props.selected ? 'bold' : 'normal')};
 `
 
 const Options = styled.div`
+  float: right;
   & ${Option} {
     border-right: 1px solid #d8d8d8;
   }
-  & ${Option}:first-child {
+  ${Option}:first-child {
     border-radius: 2px 0 0 2px;
   }
   & ${Option}:last-child {

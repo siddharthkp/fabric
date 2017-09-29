@@ -15,7 +15,7 @@ const format = (code, propList) => {
 
   let printWidth = 50 // default
   const editor = document.getElementById('editor')
-  if (editor) printWidth = editor.offsetWidth / 50
+  if (editor) printWidth = editor.offsetWidth / 10
 
   code = window.prettyFormat(code, { printWidth })
   code += '\n'

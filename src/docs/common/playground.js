@@ -25,7 +25,7 @@ const Container = styled.div`
   max-width: 800px;
   margin: 50px auto;
   & .prism-code {
-    background: #354355;
+    background: #20222b;
     overflow-x: auto;
     border-radius: 4px;
   }
@@ -44,12 +44,12 @@ const Playground = props =>
   <Container main={props.main}>
     <LiveProvider code={props.code} scope={props.components}>
       <Half left main={props.main}>
-        <Center main={props.main} style={{ minHeight: '50px' }}>
+        <Center main={props.main} style={{ minHeight: '100px' }}>
           <LivePreview />
         </Center>
       </Half>
       <Half right main={props.main}>
-        <LiveEditor id="editor" style={{ minHeight: '50px' }} />
+        <LiveEditor id="editor" style={{ minHeight: '100px' }} />
       </Half>
       <Clear />
       <LiveError />
