@@ -14,7 +14,7 @@ const Navigation = styled.div`
     display: block;
     text-decoration: none;
     color: #215c44;
-    padding: 10px;
+    padding: 10px 20px;
   }
 
   & a:hover {
@@ -30,7 +30,7 @@ export default props =>
   <Navigation>
     <Header condensed />
     {components.map(component =>
-      <NavLink key={component.name} to={`/${component.name}`}>
+      <NavLink key={component.name} to={`/${component.name.toLowerCase()}`}>
         {component.name}
       </NavLink>
     )}

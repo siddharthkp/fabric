@@ -13,7 +13,7 @@ const Library = () =>
       {components.map(component =>
         <Route
           key={component.name}
-          path={`/${component.name}`}
+          path={`/${component.name.toLowerCase()}`}
           component={component.module}
         />
       )}
