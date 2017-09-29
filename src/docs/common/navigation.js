@@ -24,14 +24,36 @@ const Navigation = styled.div`
   & a.active {
     color: #00a182;
   }
+
+  @media screen and (max-width: 699px) {
+    & {
+      width: 100%;
+      z-index: 2;
+      position: relative;
+      height: ${props => (props.open ? '100vh' : '150px')};
+      overflow: hidden;
+    }
+  }
 `
 
-export default props =>
-  <Navigation>
-    <Header condensed />
-    {components.map(component =>
-      <NavLink key={component.name} to={`/${component.name.toLowerCase()}`}>
-        {component.name}
-      </NavLink>
-    )}
-  </Navigation>
+export default class extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { open: false }
+  }
+  toggle() {
+    this.setState({ open: !this.state.open })
+  }
+  render() {
+    return (
+      <Navigation open={this.state.open} onClick={this.toggle.bind(this)}>
+        <Header condensed />
+        {components.map(component =>
+          <NavLink key={component.name} to={`/${component.name.toLowerCase()}`}>
+            {component.name}
+          </NavLink>
+        )}
+      </Navigation>
+    )
+  }
+}
