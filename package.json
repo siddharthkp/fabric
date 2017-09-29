@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "react-scripts start",
-    "build": "node src/docs/generate.js && react-scripts build",
+    "build": "node src/docs/tooling/generate.js && react-scripts build",
     "start": "cd build && serve"
   },
   "keywords": [],

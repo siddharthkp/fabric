@@ -15,6 +15,7 @@ const format = (code, propList) => {
 
   let printWidth = 50 // default
   const editor = document.getElementById('editor')
+  // printWidth is width of the editor / width of each charachter
   if (editor) printWidth = editor.offsetWidth / 10
 
   code = window.prettyFormat(code, { printWidth })
@@ -56,6 +57,7 @@ class Page extends React.Component {
       value
     }))
 
+    // prettify code
     let code = format(this.props.docs.template, propList)
     this.setState({ code })
   }
