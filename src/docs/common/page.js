@@ -1,6 +1,6 @@
 import React from 'react'
 import Playground from '../common/playground'
-import Header from '../common/header'
+import Title from '../common/title'
 import Description from '../common/description'
 import PropTable from '../common/prop-table'
 import Examples from '../common/examples'
@@ -62,7 +62,9 @@ class Page extends React.Component {
   render() {
     return (
       <div>
-        <Header condensed title={this.props.docs.name} />
+        <Title>
+          {this.props.docs.name}
+        </Title>
         <Description>
           {this.props.docs.description}
         </Description>
