@@ -100,7 +100,7 @@ class PropTable extends React.Component {
                 {prop.format}
               </Type>
             </Cell>
-            <Cell width="25%">
+            <Cell width="26%">
               {prop.description}
             </Cell>
 
