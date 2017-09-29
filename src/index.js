@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Navigation from './docs/common/navigation'
-import components from './docs/common/components'
+import components from './docs/pages/_components'
 
 const Library = () =>
   <Router>

@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import Header from './header'
-import components from './components'
+import components from '../pages/_components'
 
 const Navigation = styled.div`
   height: 100vh;
@@ -26,14 +26,12 @@ const Navigation = styled.div`
   }
 `
 
-const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1)
-
 export default props =>
   <Navigation>
     <Header condensed />
     {components.map(component =>
       <NavLink key={component.name} to={`/${component.name}`}>
-        {capitalize(component.name)}
+        {component.name}
       </NavLink>
     )}
   </Navigation>
